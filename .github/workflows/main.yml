@@ -1,4 +1,4 @@
-name: my-front
+name: aws_front_v00
 on:
   push:
     branches:
