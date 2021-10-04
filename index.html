@@ -57,13 +57,12 @@
             var form_data = new FormData($('#upload-file')[0]);
             $.ajax({
                 type: 'POST',
-                url: '{EB URL}/fileupload',
+                url: 'http://profoundsea25v00elasticbeanstalk-env.eba-pzzvqt4d.ap-northeast-2.elasticbeanstalk.com//fileupload',
                 data: form_data,
                 processData: false,
                 contentType: false,
                 success: function (data) {
                     alert("파일이 업로드 되었습니다!!");
-                    location.reload();
                 },
             });
         }
@@ -71,7 +70,7 @@
         function getFiles() {
             $.ajax({
                 type: 'GET',
-                url: '{EB URL}/files',
+                url: 'http://profoundsea25v00elasticbeanstalk-env.eba-pzzvqt4d.ap-northeast-2.elasticbeanstalk.com//files',
                 success: function (data) {
                     for(let i = 0 ; i < data['files'].length ; i++){
                         makeCard(data['files'][i]);
@@ -95,7 +94,7 @@
         function getCount() {
             $.ajax({
                 type: 'GET',
-                url: '{EB URL}/file/count',
+                url: 'http://profoundsea25v00elasticbeanstalk-env.eba-pzzvqt4d.ap-northeast-2.elasticbeanstalk.com//file/count',
                 success: function (data) {
                     $("#count").html(data.count);
                 },
